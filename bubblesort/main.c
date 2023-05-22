@@ -3,7 +3,7 @@
 void BubbleSort(int *array, int n) {
   __asm__ __volatile__(
       ".att_syntax prefix\n"
-      "dec %[n]\n\t"
+      "decl %[n]\n\t"
   "outer_loop:\n\t"
       "xorl %%edx, %%edx\n\t"
       "movl %[ptr], %%esi\n\t"
