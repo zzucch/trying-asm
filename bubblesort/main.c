@@ -12,7 +12,7 @@ void BubbleSort(int *array, int n) {
       "movl (%%esi), %%eax\n\t"
       "movl 4(%%esi), %%ebx\n\t"
       "cmpl %%ebx, %%eax\n\t"
-      "jbe forward\n\t"
+      "jle forward\n\t"
       "movl %%ebx, (%%esi)\n\t"
       "movl %%eax, 4(%%esi)\n\t"
       "movl $1, %%edx\n"
@@ -42,7 +42,7 @@ int main() {
   int array[kSize];
   int n = 0;
   while (fscanf(input_file, "%d", &array[n]) == 1 && n < kSize) {
-    n++;
+    ++n;
   }
 
   BubbleSort(array, n);
